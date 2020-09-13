@@ -1,0 +1,51 @@
+{{define "title"}}
+Index | Resource Library
+{{end}}
+
+{{define "body"}}
+<table class="table">
+    <tbody>
+        <tr>
+            <td>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <a class="btn btn-primary" href="collections/">View / Update</a>
+                        <h6 class="card-text mb-2 text-muted">View and update existing projects, templates,
+                            resources and sessions.</h6>
+                    </div>
+                </div>
+            </td>
+
+            <td>
+
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <a class="btn btn-primary" href="collections/create">View / Update</a>
+                        <h6 class="card-text mb-2 text-muted">Create a new project, template or resource</h6>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    //Redirects
+    $("select#typeSelect").on("change", function (e) {
+        switch (this.value) {
+            case "Templates":
+                window.location.replace("/collections/templates");
+                break;
+            case "Projects":
+                window.location.replace("/collections/projects");
+                break;
+            case "Resources":
+                window.location.replace("/collections/resources");
+                break;
+            case "Sessions":
+                window.location.replace("/collections/sessions");
+                break;
+        }
+    });
+</script>
+{{end}}

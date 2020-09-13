@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  library:
+    image: nil
+    container_name: library 
+    privileged: true
+    ports:
+      - "8888:8888"
+    links: 
+      - mongodb 
+    depends_on:
+      - mongodb
+    command: /opt/library/library
+
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    volumes:
+      - /opt/library/data/db:/data/db
+    ports:
+      - 27017:27017

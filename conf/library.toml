@@ -1,0 +1,5 @@
+port = 8888
+runmode = "dev"
+sessext = 20
+dbname = "library_test"
+logfile = "/tmp/library.log"
